@@ -1,0 +1,19 @@
+<h1>Đơn đặt hàng</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tên khách hàng</th>
+      <th>Ngày</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders$ | async">
+      <td>{{ order.shipping.lastName }} {{order.shipping.firstName}}</td>
+      <td>{{ order.datePlaced | date}}</td>
+      <td>
+        <a [routerLink]="['/order-form',order.$key]" >Chi tiết</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

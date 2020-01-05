@@ -1,0 +1,31 @@
+<section>
+    <div class="wrap-content">
+        <div class="content-img">
+            <img width="390" height="390" *ngIf="product.imageUrl"  name="imageUrl" id="imageUrl" src="{{product.imageUrl}}" alt="">
+        </div>
+        <div class="content-detail">
+            <div class="detail-title">
+                <h1>{{product.title}}</h1>
+                <span>{{product.price | currency: 'VND': true}}</span>
+                <hr style="border: solid 0.9px #f2f2f2;">
+            </div>
+            
+            <div class="detail-size">
+                <label>Kích thước</label><br>
+                <span >
+                    <select class="select">
+                        <option value="">{{ product.size }}</option>
+                    </select>
+                </span>
+            </div>
+            
+            <div class="detail-btn">
+                <button (click)="AddtoCart()" class="btn-add"><i class="fa fa-cart-plus" aria-hidden="true"></i>Thêm vào giỏ</button>
+                <button (click)="checkOut()" class="btn-mua" ><i class="fa fa-check" aria-hidden="true"></i>Mua ngay</button>
+            </div>
+               
+           
+        </div>
+        
+    </div>
+   </section>

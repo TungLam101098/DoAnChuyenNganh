@@ -1,0 +1,50 @@
+
+<section id = "header1">
+  <div class="header">
+      <div class="logo">
+          <a routerLink="/">
+              <img src="http://theme.hstatic.net/1000271846/1000486586/14/logo.png?v=164">
+          </a>
+
+      </div>
+      <div class="header-right_mobile">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+      <div class="header-right">
+        <ng-template #anonymousUser>
+          <div class="header-right_menu">
+            <a routerLink="/login">Đăng Nhập</a>
+        </div>
+        </ng-template>
+        <div ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown ">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle"
+                               id="dropdown01"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                               {{ appUser.name }}
+           </a>
+          <div ngbDropdownMenu class="dropdown-menu " aria-labelledby="dropdown01">
+            <a class="dropdown-item" routerLink="/my/orders">Đơn hàng của tôi</a>
+            <ng-container *ngIf="appUser.isAdmin">
+                <a class="dropdown-item" routerLink="/admin/orders">Quản lý đơn hàng</a>
+                <a class="dropdown-item" routerLink="/admin/products">Quản lý sản phẩm</a>
+                <a class="dropdown-item" routerLink="/admin/contacts">Quản lý tài khoản</a>
+            </ng-container>
+            <a class="dropdown-item" (click)="logout()">Đăng xuất</a>
+          </div>
+          <div class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/shopping-cart">
+                <i class="fa fa-shopping-cart" aria-hidden="true" ></i>
+                <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
+                  {{ cart.totalItemsCount }}
+                </span>
+              </a>
+            </li>
+          </div>
+        </div>
+          <p>Miễn phí vận chuyển ĐƠN HÀNG TRÊN 500K</p>
+      </div>
+  </div>
+</section>

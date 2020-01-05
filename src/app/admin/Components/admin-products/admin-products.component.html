@@ -1,0 +1,24 @@
+<p>
+  <a routerLink="/admin/products/new" class="btn btn-primary">Sản phẩm mới</a>
+</p>
+<p>
+  <input
+  #query
+  (keyup) = "filter(query.value)"
+   type="text" class="form-control" placeholder="Tìm kiếm...">
+</p>
+<data-table
+  [items]="items"
+  [itemCount]="itemCount"
+  (reload)="reloadItems($event)"
+>
+<data-table-column [property]="'title'" [header]="'Tiêu đề'" [sortable]="true" [resizable]="true"> </data-table-column>
+
+<data-table-column [property]="'price'" [header]="'Giá'" [sortable]="true" [resizable]="true"> </data-table-column>
+  <ng-template #dataTableCell let-item="item"> {{product.price | currency:'VND':true}} </ng-template>
+<data-table-column [property]="'$key'" >
+<ng-template #dataTableCell let-item="item">
+  <a [routerLink]="['/admin/products/', item.$key]">Chỉnh sửa</a>
+</ng-template>
+</data-table-column>
+</data-table>

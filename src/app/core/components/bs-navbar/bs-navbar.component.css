@@ -1,0 +1,66 @@
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+#header1{
+    margin-top: -65px;
+}
+.header-right_mobile{
+  display: none;
+}
+.header {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    width: 90%;
+    margin: 0 auto;
+    height: 165px;
+}
+.header-right{
+    margin-top: 20px;
+ 
+}
+.header-right a {
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-transform: uppercase ;
+    color: black;
+    border-right: solid 1px black;
+    text-align: center;
+}
+.header-right_menu {
+    height: 40px;
+    width: 350px;
+    border-bottom: dotted 1px black;
+}
+.header-right_menu a:hover {
+  color: violet;
+}
+.main-menu{
+    border-top: solid 0.1px gainsboro;
+}
+.search{
+    border-top: solid 0.1px gainsboro;
+}
+.main-menu ul li{
+    float: left;
+    list-style: none;
+}
+.main-menu ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: black;
+}
+.main-menu ul li a:hover{
+   color: violet;
+   font-weight: bold; 
+}
+#search{
+    height: 30px;
+    width:  232px;
+    padding-left: 15px;
+    background:#f2f2f2;
+    border: none;
+    margin: 10px;
+}

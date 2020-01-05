@@ -1,0 +1,22 @@
+<h1>Người dùng</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th>isAdmin</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of contact$ | async">
+      <td>{{ c.name }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.isAdmin }}</td>
+      <td>
+        <a [routerLink]="['/admin/contact/', c.$key]" >Chỉnh sửa</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
